@@ -1,0 +1,61 @@
+For a comprehensive College Database ER diagram, we'll define entities (Student, Course, Professor), their attributes, relationships between them (along with cardinality and constraints), and identify strong and weak entities and relationships.
+
+Entities, Attributes, and Relationships
+Entities and Attributes
+Student (Strong Entity)
+
+Attributes:
+student_id (Primary Key): Unique identifier for each student.
+name: Name of the student.
+dob: Date of birth of the student.
+email: Email address of the student.
+phone_number: Contact number of the student.
+address: Address of the student.
+Type: Strong Entity, as it exists independently.
+Course (Strong Entity)
+
+Attributes:
+course_id (Primary Key): Unique identifier for each course.
+course_name: Name of the course.
+course_code: Unique code for the course.
+credit_hours: Credit hours for the course.
+Type: Strong Entity, as it can exist independently.
+Professor (Strong Entity)
+
+Attributes:
+professor_id (Primary Key): Unique identifier for each professor.
+name: Name of the professor.
+email: Email address of the professor.
+phone_number: Contact number of the professor.
+department: Department to which the professor belongs.
+Type: Strong Entity, as it exists independently.
+Enrollment (Weak Entity)
+
+Attributes:
+student_id (Foreign Key): References Student.
+course_id (Foreign Key): References Course.
+enrollment_date: Date when the student enrolled in the course.
+grade: Grade obtained by the student in the course.
+Type: Weak Entity because it depends on both Student and Course entities.
+Relationship: Many-to-Many relationship between Student and Course.
+Teaches (Weak Relationship)
+
+Attributes:
+professor_id (Foreign Key): References Professor.
+course_id (Foreign Key): References Course.
+Type: Weak Relationship because it depends on Professor and Course.
+Relationship: One-to-Many relationship between Professor and Course.
+Relationships
+Enrollment (between Student and Course)
+
+Type: Many-to-Many (M
+) relationship
+Description: A student can enroll in many courses, and each course can have many students enrolled.
+Attributes: enrollment_date and grade.
+Primary Key: Combination of student_id and course_id.
+Teaches (between Professor and Course)
+
+Type: One-to-Many (1
+) relationship
+Description: Each professor can teach multiple courses, but each course is taught by only one professor.
+Attributes: None (relationship-only).
